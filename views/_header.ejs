@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		<%= typeof title == "undefined" ? "Home" : title %>
+	</title>
+	<link rel="stylesheet" href="<%= request.mainURL%>/public/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="<%= request.mainURL%>/public/font-awesome-4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+
+	<input type="hidden" id="base-url" value="<%= request.mainURL%>" />
+
+	<nav class="navbar navbar-expanded-lg navbar-light bg-light">
+		<a href="<%=request.mainURL%>" class="navbar-brand">F-Transfer</a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a href="<%=request.mainURL%>" class="nav-link">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item active">
+					<a href="<%=request.mainURL%>/MyUploads" class="nav-link">My Uploads</a>
+				</li>
+				<li class="nav-item active">
+					<a href="<%=request.mainURL%>/SharedWithMe" class="nav-link">Shared with me</a>
+				</li>
+				
+			</ul>
+		</div>
+	</nav>
