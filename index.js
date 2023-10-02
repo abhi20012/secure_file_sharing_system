@@ -17,6 +17,7 @@ app.use("/public/font-awesome-4.7.0", express.static(__dirname + "/public/font-a
 var session = require('express-session');
 const MongoStore = require('connect-mongo');
 
+
 app.use(session({
 	name:'file_transfer',
 	secret:"Demokey",
@@ -43,6 +44,10 @@ app.use(function(request, result, next){
 
 	next();
 })
+
+// express formidable is used to parse the form data values
+var formidable = require('express-formidable');
+app.use(formidable());
 
 app.use('/', require('./routes'));
 
