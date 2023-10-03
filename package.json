@@ -17,7 +17,8 @@
     "express-formidable": "^1.2.0",
     "express-session": "^1.17.3",
     "http": "^0.0.1-security",
-    "mongoose": "^7.5.3",
+    "mongodb": "^4.17.1",
+    "mongoose": "^6.12.0",
     "nodemailer": "^6.9.5",
     "nodemon": "^3.0.1"
   }

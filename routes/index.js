@@ -8,7 +8,7 @@ router.get('/', indexController.index);
 
 router.use('/users', require('./users'));
 
-
+router.use('/files', require('./files'));
 
 
 
