@@ -15,4 +15,7 @@ router.get('/Logout', userController.Logout);
 router.get('/verifyEmail/:email/:verification_token', userController.VerifyEmail);
 router.get('/ResetPassword/:email/:reset_token', userController.ResetPassword);
 
+
+router.post('/GetUser', userController.GetUser);
+
 module.exports = router;

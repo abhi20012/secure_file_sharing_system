@@ -4,5 +4,22 @@
 <script src="<%= request.mainURL %>/public/js/sweetalert.min.js"></script>
 
 
+
+<script>
+	function confirmDeleteFile(form){
+		swal({
+			title:"Are you sure?",
+			text:"Once delted, you will not be able to recover this file.",
+			icon:"warning",
+			buttons:true,
+			dangerMode:true,
+		}).then(function(willDelete){
+			if(willDelete){
+				document.getElementById("form-delete-file").submit();
+			}
+		})
+	}
+</script>
+
 </body>
 </html>

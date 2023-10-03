@@ -342,3 +342,45 @@ module.exports.Logout = function(request, result){
 	request.session.destroy();
 	result.redirect("/");
 };
+
+module.exports.GetUser =async function(request, result){
+  const email = request.fields.email;
+
+  if(request.session.user){
+    var user = await database.collection('users').findOne({
+      "email":email
+    })
+
+    if(user == null){
+      result.json({
+        "status":"error",
+        "message":"User " + email + "does not exist"
+      });
+      return false;
+    }
+
+    if(!user.isVerified){
+      result.json({
+        "status":"error",
+        "message":"User " + user.name + " account is not verified."
+      });
+      return false;
+    }
+    result.json({
+      "status":"error",
+      "message":"Data has been fetched.",
+      "user":{
+        "_id":user._id,
+        "name":user.name,
+        "email":user.email
+      }
+    });
+    return false;
+  }
+
+  result.json({
+    "status":"error",
+    "message":"Please login to perform this action"
+  });
+  return false;
+}
